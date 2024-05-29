@@ -1,7 +1,7 @@
 import setuptools
 
 setuptools.setup(
-    name="jupyter-novnc-proxy",
+    name="jupyter_miircic_novnc_proxy",
     version='0.0.1',
     url="https://github.com/tiaden/jupyter-miircic-novnc-proxy",
     author="Edem Tiassou",
@@ -14,7 +14,7 @@ setuptools.setup(
     ],
     entry_points={
         'jupyter_serverproxy_servers': [
-            'rstudio = jupyter_novnc_proxy:setup_vnc_server'
+            'miircic_novnc = jupyter_miircic_novnc_proxy:setup_vnc_server'
         ]
     },
     package_data={
