@@ -14,7 +14,7 @@ setuptools.setup(
     ],
     entry_points={
         'jupyter_serverproxy_servers': [
-            'miircic_novnc = jupyter_miircic_novnc_proxy:setup_vnc_server'
+            'miircic_vnc = jupyter_miircic_novnc_proxy:setup_vnc_server'
         ]
     },
     package_data={
