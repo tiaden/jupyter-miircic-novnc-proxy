@@ -59,8 +59,6 @@ def setup_vnc_server():
 
         return cmd
 
-    path_info = 'miircic_vnc/index.html' + _novnc_urlparams()
-
     server_process = {
         'command': _get_cmd,
         'timeout': 90,
@@ -72,7 +70,6 @@ def setup_vnc_server():
             'enabled': True,
             'title': 'MiircicVNC',
             'icon_path': get_icon_path(),
-            'path_info': path_info,
         }
     }
     return server_process
