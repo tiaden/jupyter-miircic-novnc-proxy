@@ -64,7 +64,6 @@ def setup_vnc_server():
     server_process = {
         'command': _get_cmd,
         'timeout': 90,
-        'mappath': _novnc_mappath,
         'absolute_url': False,
         'new_browser_tab': True,
         'environment': _get_env,
