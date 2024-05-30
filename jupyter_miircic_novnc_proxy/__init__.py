@@ -43,7 +43,7 @@ def _novnc_mappath(path):
     # always pass the url parameter
     if path in ('/', '/index.html',):
         url_params = _novnc_urlparams()
-        path = '/vnc.html' + url_params
+        path = '/index.html' + url_params
 
     return path
 
