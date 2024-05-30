@@ -25,12 +25,12 @@ def get_icon_path():
 
 
 def _novnc_urlparams():
-    url_params = ('?video_quality=2' +
-    '&enable_webp=false' +
-    '&autoconnect=1' +
-    '&path=miircic_vnc/websockify' +
-    '&cursor=true' +
-    '&resize=remote' +
+    url_params = ('?video_quality=2'
+    '&enable_webp=false'
+    '&autoconnect=1'
+    '&path=miircic_vnc/websockify' 
+    '&cursor=true'
+    '&resize=remote'
     '&clipboard_up=true'
     '&clipboard_down=true'
     '&clipboard_seamless=true'
