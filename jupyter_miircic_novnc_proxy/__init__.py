@@ -41,7 +41,7 @@ def _novnc_urlparams():
 
 def _novnc_mappath(path):
     # always pass the url parameter
-    if path in ('/', '/vnc.html',):
+    if path in ('/', '/index.html',):
         url_params = _novnc_urlparams()
         path = '/vnc.html' + url_params
 
@@ -64,6 +64,7 @@ def setup_vnc_server():
     server_process = {
         'command': _get_cmd,
         'timeout': 90,
+        'mappath': _novnc_mappath,
         'absolute_url': False,
         'new_browser_tab': True,
         'environment': _get_env,
