@@ -28,13 +28,14 @@ def _novnc_urlparams():
     url_params = ('?video_quality=2'
     '&enable_webp=false'
     '&autoconnect=1'
-    '&path=miircic_vnc/websockify' 
+    '&path=miircic_vnc/websockify'
+    '&idle_disconnect=20'
     '&cursor=true'
     '&resize=remote'
     '&clipboard_up=true'
     '&clipboard_down=true'
     '&clipboard_seamless=true'
-    '&toggle_control_panel=null')
+    '&toggle_control_panel=false')
 
     return url_params
 
