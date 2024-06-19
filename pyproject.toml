@@ -40,7 +40,7 @@ miircic-vnc= "jupyter_miircic_novnc_proxy:setup_vnc_server"
 
 
 [tool.hatch.build.targets.wheel]
-packages = ["jjupyter_miircic_novnc_proxy"]
+packages = ["jupyter_miircic_novnc_proxy"]
 
 [tool.hatch.build]
 artifacts = [
