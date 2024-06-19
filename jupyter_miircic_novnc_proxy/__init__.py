@@ -25,10 +25,10 @@ def get_icon_path():
 
 
 def _novnc_urlparams():
-    url_params = ('?video_quality=2'
+    url_params = ('?video_quality=3'
     '&enable_webp=false'
     '&autoconnect=1'
-    '&path=miircic_vnc/websockify'
+    '&path=miircic-vnc/websockify'
     '&idle_disconnect=20'
     '&cursor=true'
     '&resize=remote'
@@ -69,7 +69,7 @@ def setup_vnc_server():
         'environment': _get_env,
         'launcher_entry': {
             'enabled': True,
-            'title': 'MiircicVNC',
+            'title': os.getenv('NOVNC_PROXY_TITLE', 'Miircic VNC'),
             'icon_path': get_icon_path(),
         }
     }
