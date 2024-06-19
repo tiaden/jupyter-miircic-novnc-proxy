@@ -51,4 +51,4 @@ artifacts = [
 artifacts = []
 exclude = [".git",".github", "Makefile"]
 
-[tool.hatch.build.targets.jjupyter_miircic_novnc_proxy]
+[tool.hatch.build.targets.jupyter_miircic_novnc_proxy]
