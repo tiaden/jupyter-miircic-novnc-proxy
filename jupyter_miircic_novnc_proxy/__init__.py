@@ -1,5 +1,9 @@
 import os
 import shutil
+import logging
+
+logger = logging.getLogger(__name__)
+logger.setLevel('INFO')
 
 
 def get_vnc_server_script(prog):
@@ -26,27 +30,35 @@ def get_icon_path():
 
 def _novnc_urlparams():
     url_params = ('?video_quality=3'
-    '&enable_webp=false'
-    '&autoconnect=1'
-    '&path=miircic-vnc/websockify'
-    '&idle_disconnect=20'
-    '&cursor=true'
-    '&resize=remote'
-    '&clipboard_up=true'
-    '&clipboard_down=true'
-    '&clipboard_seamless=true'
-    '&toggle_control_panel=false')
+                  '&enable_webp=false'
+                  '&autoconnect=1'
+                  '&path=miircic-vnc/websockify'
+                  '&idle_disconnect=20'
+                  '&cursor=true'
+                  '&resize=remote'
+                  '&clipboard_up=true'
+                  '&clipboard_down=true'
+                  '&clipboard_seamless=true'
+                  '&toggle_control_panel=false')
 
     return url_params
 
 
 def _novnc_mappath(path):
+    logger.info('Before path transform: ' + path)
     # always pass the url parameter
-    if path in ('/', '/index.html','/vnc.html'):
-        url_params = _novnc_urlparams()
-        path = '/index.html' + url_params
+    if path in ('/', '/index.html', '/vnc.html'):
+        path += _novnc_urlparams()
+    logger.info('After path transform: ' + path)
 
     return path
+
+
+def _novnc_response(path, host, response, orig_response, port):
+    # Add server header in case of Lossless mode
+    response.headers["Cross-Origin-Embedder-Policy"] = "require-corp"
+    response.headers["Cross-Origin-Opener-Policy"] = "same-origin"
+    response.headers["Cross-Origin-Resource-Policy"] = "same-site"
 
 
 def setup_vnc_server():
@@ -64,6 +76,7 @@ def setup_vnc_server():
         'command': _get_cmd,
         'timeout': 90,
         'mappath': _novnc_mappath,
+        "rewrite_response": _novnc_response,
         'absolute_url': False,
         'new_browser_tab': True,
         'environment': _get_env,
