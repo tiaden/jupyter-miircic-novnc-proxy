@@ -48,7 +48,7 @@ def _novnc_mappath(path):
     logger.info('Before path transform: ' + path)
     # always pass the url parameter
     if path in ('/', '/index.html', '/vnc.html'):
-        path += _novnc_urlparams()
+        path = '/vnc.html' + _novnc_urlparams()
     logger.info('After path transform: ' + path)
 
     return path
