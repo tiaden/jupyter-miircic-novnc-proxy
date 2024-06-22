@@ -32,7 +32,7 @@ def _novnc_urlparams():
     url_params = ('?video_quality=3'
                   '&enable_webp=false'
                   '&autoconnect=1'
-                  '&path=miircic-vnc/websockify'
+                  '&path=miircic-vn/websockify'
                   '&idle_disconnect=20'
                   '&cursor=true'
                   '&resize=remote'
