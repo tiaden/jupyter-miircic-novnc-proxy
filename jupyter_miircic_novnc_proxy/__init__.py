@@ -8,7 +8,7 @@ logger.setLevel('INFO')
 
 def get_vnc_server_script(prog):
     other_paths = [
-        os.path.join('/dockerstartup', prog),
+        os.path.join('/startup', prog),
     ]
     if shutil.which(prog):
         return prog
