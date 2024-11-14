@@ -28,30 +28,30 @@ def get_icon_path():
     )
 
 
-def _novnc_urlparams():
-    url_params = ('?video_quality=3'
-                  '&enable_webp=false'
-                  '&autoconnect=1'
-                  '&path=miircic-vn/websockify'
-                  '&idle_disconnect=20'
-                  '&cursor=true'
-                  '&resize=remote'
-                  '&clipboard_up=true'
-                  '&clipboard_down=true'
-                  '&clipboard_seamless=true'
-                  '&toggle_control_panel=false')
-
-    return url_params
-
-
-def _novnc_mappath(path):
-    logger.info('Before path transform: ' + path)
-    # always pass the url parameter
-    if path in ('/', '/index.html', '/vnc.html'):
-        path = '/vnc.html' + _novnc_urlparams()
-    logger.info('After path transform: ' + path)
-
-    return path
+# def _novnc_urlparams():
+#     url_params = ('?video_quality=3'
+#                   '&enable_webp=false'
+#                   '&autoconnect=1'
+#                   '&path=miircic-vn/websockify'
+#                   '&idle_disconnect=20'
+#                   '&cursor=true'
+#                   '&resize=remote'
+#                   '&clipboard_up=true'
+#                   '&clipboard_down=true'
+#                   '&clipboard_seamless=true'
+#                   '&toggle_control_panel=false')
+#
+#     return url_params
+#
+#
+# def _novnc_mappath(path):
+#     logger.info('Before path transform: ' + path)
+#     # always pass the url parameter
+#     if path in ('/', '/index.html', '/vnc.html'):
+#         path = '/vnc.html' + _novnc_urlparams()
+#     logger.info('After path transform: ' + path)
+#
+#     return path
 
 
 def _novnc_response(path, host, response, orig_response, port):
