@@ -62,8 +62,8 @@ def _novnc_response(path, host, response, orig_response, port):
 
 
 def setup_vnc_server():
-    def _get_env(port):
-        return dict(NO_VNC_PORT="6901")
+    #def _get_env(port):
+    #    return dict(NO_VNC_PORT="6901")
 
     def _get_cmd():
         cmd = [
@@ -77,8 +77,9 @@ def setup_vnc_server():
         'timeout': 90,
         "rewrite_response": _novnc_response,
         'absolute_url': False,
+        'port': 6901,
         'new_browser_tab': True,
-        'environment': _get_env,
+        #        'environment': _get_env,
         'launcher_entry': {
             'enabled': True,
             'title': os.getenv('NOVNC_PROXY_TITLE', 'Miircic VNC'),
