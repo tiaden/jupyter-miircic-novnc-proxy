@@ -63,7 +63,7 @@ def _novnc_response(path, host, response, orig_response, port):
 
 def setup_vnc_server():
     def _get_env(port):
-        return dict(NO_VNC_PORT=str(port))
+        return dict(NO_VNC_PORT="6901")
 
     def _get_cmd():
         cmd = [
