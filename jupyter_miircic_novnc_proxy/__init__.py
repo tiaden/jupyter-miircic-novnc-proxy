@@ -24,7 +24,7 @@ def get_icon_path():
     if os.getenv('NOVNC_PROXY_ICON_URL'):
         return os.getenv('NOVNC_PROXY_ICON_URL')
     return os.path.join(
-        os.path.dirname(os.path.abspath(__file__)), 'icons', 'novnc.svg'
+        os.path.dirname(os.path.abspath(__file__)), 'icons', 'novnc-new.svg'
     )
 
 
